@@ -5,11 +5,12 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:github": "npm run delete:docs && ng build --base-href ./ && npm run copy:dist ",
+    "build:github": "npm run delete:docs && ng build --base-href ./ && npm run copy:dist && npm run copy:404 ",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "delete:docs": "del/Q docs ",
-    "copy:dist": "copyfiles dist/country-app/browser/* ./docs -f"
+    "copy:dist": "copyfiles dist/country-app/browser/* ./docs -f",
+    "copy:404": "cp ./docs/index.html ./docs/404.html || xcopy /Y .\\docs\\index.html .\\docs\\404.html*"
   },
   "private": true,
   "dependencies": {
